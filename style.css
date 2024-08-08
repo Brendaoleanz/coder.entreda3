@@ -1,0 +1,270 @@
+@font-face {
+    font-family: 'Roboto Slab';
+    scr: url('audio/Roboto_Slab.zip') format('zip');
+}
+
+.background-container {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.background-image {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-image: url(img/img.boda.jpg);
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 1;
+}
+
+.overlay {
+    position: fixed;
+    overflow: auto;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+html,
+body {
+    height: auto;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: #f886c9;
+}
+
+.contenido,
+.h1 {
+    position: relative;
+    color: #ffffff;
+    font-family: oblique, Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 50px;
+    padding: 20px;
+    z-index: 3;
+}
+
+.contenido {
+    position: relative;
+    color: #ffffff;
+    font-family: arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+    font-size: 20px;
+    z-index: 3;
+
+}
+
+.music {
+    position: absolute;
+    top: 130px;
+    left: auto;
+    justify-content: column;
+    color: #ffffff;
+    font-family: arial, sans-serif;
+    text-align: center;
+    padding: 10px;
+    font-size: 15px;
+    z-index: 3;
+    line-height: 1;
+}
+
+.button {
+    position: absolute;
+    bottom: 350px;
+    left: auto;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    position: relative;
+    z-index: 3;
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+
+}
+
+header {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    z-index: 100;
+    overflow: auto;
+}
+
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    color: #ffffff;
+    background: rgba(255, 1, 170, 0.836);
+    padding: 20px;
+    margin: 0;
+    z-index: 100;
+}
+
+nav {
+    position: relative;
+    z-index: 10;
+}
+
+ul.enlaces {
+    list-style: none;
+    padding: 0;
+    margin-right: 15px;
+    display: inline-block;
+    text-align: center;
+    z-index: 10;
+}
+
+ul.enlaces li {
+    display: inline-block;
+    margin-right: 15px;
+    position: relative;
+    text-align: center;
+}
+
+ul.enlaces a {
+    text-decoration: none;
+    color: #ffffff;
+    position: relative;
+    text-align: center;
+    z-index: 10;
+}
+
+
+.parent-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: transparent;
+    margin: 50px;
+}
+
+.img-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width: 200px;
+    height: 200px;
+    max-width: 400px;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.anillos {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    background-color: transparent;
+}
+
+.content {
+    position: relative;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    font-size: 20px;
+    margin: 15px;
+    padding: 0;
+    color: #fff;
+    height: 100vh;
+    top: 20px;
+    left: 0;
+}
+
+
+/*------------------CEREMONIA---------------------------*/
+.ceremonia {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    top: 5px;
+    left: 0;
+    z-index: 10;
+    margin: 30px;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+
+}
+
+.section-title {
+    position: relative;
+    top: 60px;
+    left: 50px;
+    font-size: 25px;
+    font-family: 'Times New Roman', Times, serif;
+    color: #ffffff;
+    z-index: 3;
+    margin: 30px;
+    padding: auto;
+}
+
+.section-info {
+    position: relative;
+    top: 30px;
+    left: 50px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.map {
+    width: 400px;
+    height: 350px;
+    border: 0;
+    margin: 30px;
+}
+
+.img-heart {
+    position: relative;
+    top: 20px;
+    left: 50%;
+    display: inline-block;
+}
+
+
+/*------------------FIESTA--------------------*/
+
+.fiesta {
+    margin: 50px;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+.section-fiesta {
+    font-size: 25px;
+    font-family: 'Times New Roman', Times, serif;
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <title>boda_camila&jorge</title>
+</head>
+
+<body>
+    <div class="background">
+        <div class="overlay">
+            <div class="background-container"></div>
+            <div class="background-image"></div>
+            <div class="overlay"></div>
+            <!--Lista desordenada -->
+            <header>
+                <nav>
+                    <ul class="enlaces">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="ceremonia.html">Ceremonia</a></li>
+                        <li><a href="fiesta.html">Fiesta</a></li>
+                        <li><a href="img.html">Retratos</a></li>
+                        <li><a href="info.html">Informacion</a></li>
+                    </ul>
+                </nav>
+
+                <main>
+                    <div class="contenido">
+                        <p>¡Bienvenidos a la invitación de nuestra boda!</p>
+                        <h1>Camila & Jorge</h1>
+                        <div class="parent-container">
+                            <div class="img-content">
+                                <img class="anillos" src="img/anillos.png.png" alt="anillos">
+                            </div>
+                            <div class="music">
+                                <p>La música es parte de la experiencia</p>
+                                <p>¿Queres acceder a la invitación con música?</p>
+                            </div>
+                            <div class="button">
+                                <button id="conmusica">Ingresar con musica</button>
+                                <button id="sinmusica">ingresar sin musica</button>
+                            </div>
+                            <audio id="audioPlayer" style="display: none;">
+                                <source src="audio/musica.boda.mp3" type="audio/mpeg">
+                            </audio>
+                        </div>
+                        <script>
+                            document.getElementById('conmusica').addEventListener('click', function () {
+                                var audioPlayer = document.getElementById('audioPlayer');
+                                if (audioPlayer) {
+                                    audioPlayer.play();
+                                }
+                            });
+
+                            document.getElementById('sinmusica').addEventListener('click', function () {
+                                // Aquí puedes agregar lógica adicional si es necesario
+                            });
+                        </script>
+                        <div class="content">
+                            <h2>28.12.2024</h2>
+                            <h1>Camila & Jorge</h1>
+                        </div>
+
+
+                </main>
+                <footer>
+                    <p>&copy; ¡Queremos que seas parte del comienzo de nuestra nueva historia!</p>
+                </footer>
+            </header>
+</body>
+
+
+</html>
