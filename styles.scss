@@ -1,0 +1,530 @@
+// inicio-----------------------------------------------
+$primary-color: #ffffff;
+$secondary-color: #f886c9;
+$overlay-color: rgba(0, 0, 0, 0.5);
+$background-color: rgba(255, 1, 170, 0.836);
+$font-family-base: Arial, Helvetica, sans-serif;
+$font-family-heading: "Roboto Slab", $font-family-base;
+$font-size-base: 16px;
+$z-index-default: 1;
+$z-index-high: 10;
+$z-index-nav: 100;
+
+@mixin center-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin font-settings($size, $family, $color) {
+  font-size: $size;
+  font-family: $family;
+  color: $color;
+}
+
+@font-face {
+  font-family: "Roboto Slab";
+  src: url("audio/Roboto_Slab.zip") format("zip");
+}
+
+html,
+body {
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  background-color: $secondary-color;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.background-container {
+  @include center-flex;
+  position: relative;
+  overflow: hidden;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+}
+
+.background-image {
+  width: 100vw;
+  height: 100vh;
+  background: url('img/img.boda.jpg') bottom / cover no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: $z-index-default;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: $overlay-color;
+  z-index: $z-index-default;
+  @include center-flex;
+}
+
+
+.contenido,
+.h1 {
+  @include font-settings(50px, oblique, $primary-color);
+  text-align: center;
+  padding: 20px;
+  z-index: 3;
+}
+
+.contenido {
+  @include font-settings(20px, $font-family-base, $primary-color);
+}
+
+.music {
+  position: absolute;
+  top: 130px;
+  line-height: 1;
+  @include font-settings(15px, $font-family-base, $primary-color);
+}
+
+
+.button {
+  position: absolute;
+  bottom: 350px;
+  @include center-flex;
+  gap: 5px;
+  padding: 10px;
+  font-size: $font-size-base;
+  color: $primary-color;
+  border: none;
+  cursor: pointer;
+  z-index: 3;
+}
+
+header {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  z-index: $z-index-high;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background: $background-color;
+  padding: 20px;
+  color: $primary-color;
+  z-index: $z-index-high;
+}
+
+
+nav {
+  position: relative;
+  background-color: #333;
+  padding: 10px;
+  z-index: $z-index-nav;
+}
+
+ul.enlaces {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  @include center-flex;
+}
+
+ul.enlaces li {
+  margin-right: 15px;
+}
+
+ul.enlaces a {
+  text-decoration: none;
+  padding: 10px;
+  color: $primary-color;
+
+  &:hover {
+    background-color: #555;
+  }
+}
+
+
+.parent-container {
+  @include center-flex;
+  flex-direction: column;
+  height: 100vh;
+  background: transparent;
+  margin: 50px;
+}
+
+.img-content {
+  @include center-flex;
+  overflow: hidden;
+  width: 200px;
+  height: 200px;
+  max-width: 400px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.anillos {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  background-color: transparent;
+}
+
+.content {
+  position: relative;
+  @include font-settings(20px, "Franklin Gothic Medium", $primary-color);
+  text-align: center;
+  height: 100vh;
+  margin: 15px;
+}
+
+// Media queries
+@media (max-width: 600px) {
+
+  .contenido,
+  .h1 {
+    @include font-settings(24px, oblique, $primary-color);
+    padding: 20px;
+  }
+
+  .music {
+    top: 20%;
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  .button {
+    bottom: 250px;
+    font-size: 14px;
+  }
+
+  .img-content {
+    width: 150px;
+    height: 250px;
+    max-width: 300px;
+    padding: auto;
+
+  }
+
+
+  .content {
+    font-size: 16px;
+    margin: 10px;
+  }
+
+  ul.enlaces a {
+    font-size: 14px;
+  }
+
+  footer {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+//ceremonia -----------------------------------
+
+$card-width: 450px;
+$card-height: 350px;
+$background-title-width: 350px;
+$background-title-height: 250px;
+$card-background-color: #fff;
+$card-border-radius: 20px;
+$card-box-shadow: 0px 0px 25px #2a2a2a;
+$section-bg-color: #eabed8;
+$section-font-family: 'Times New Roman', Times, serif;
+$info-font-family: 'Roboto', sans-serif;
+$font-size-large: 25px;
+$font-size-medium: 18px;
+$font-size-small: 16px;
+$hover-transform: 3%;
+$footer-bg-color: rgba(0, 0, 0, 0.2);
+$footer-color: white;
+$img-heart-width: 150px;
+$img-heart-small-width: 100px;
+
+
+@mixin card-style($width, $height) {
+  width: $width;
+  height: $height;
+  background-color: $card-background-color;
+  border-radius: $card-border-radius;
+  box-shadow: $card-box-shadow;
+  margin: 15px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+
+@mixin hover-transform($transform-value) {
+  &:hover {
+    transform: translateY($transform-value);
+  }
+}
+
+
+.ceremonia {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+// Cards
+.background-title {
+  @include card-style($background-title-width, $background-title-height);
+}
+
+.ceremonia-dia,
+.ceremonia-direc,
+.ceremonia-lugar {
+  @include card-style($card-width, $card-height);
+  margin-top: 50px;
+  @include hover-transform($hover-transform);
+}
+
+.section-title {
+  position: relative;
+  border-radius: $card-border-radius;
+  font-size: $font-size-large;
+  font-family: $section-font-family;
+  color: #000000;
+  z-index: 10;
+  padding: 20px;
+  text-align: center;
+  background-color: $section-bg-color;
+  margin-top: 10px;
+}
+
+.section-info {
+  position: relative;
+  top: 30px;
+  left: 20px;
+  font-family: $info-font-family;
+  font-size: $font-size-medium;
+  color: #000000;
+  z-index: 10;
+}
+
+.map {
+  width: 100%;
+  height: 200px;
+  border: 0;
+  margin-top: 10px;
+}
+
+.img-heart {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.img-heart img {
+  width: $img-heart-width;
+  height: auto;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: $footer-bg-color;
+  color: $footer-color;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+// Media queries
+@media (max-width: 600px) {
+  .ceremonia {
+    padding: 10px;
+  }
+
+  .background-title,
+  .ceremonia-dia,
+  .ceremonia-direc,
+  .ceremonia-lugar {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+  }
+
+  .section-title {
+    font-size: 20px;
+    padding: 15px;
+    margin-top: 5px;
+  }
+
+  .section-info {
+    font-size: $font-size-small;
+    left: 0;
+    top: 20px;
+  }
+
+  .img-heart img {
+    width: $img-heart-small-width;
+  }
+
+  .map {
+    height: 150px;
+  }
+
+  footer {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+// fiesta ---------------------------------
+$card-width: 450px;
+$card-height: 350px;
+$card-background-color: #fff;
+$card-border-radius: 20px;
+$card-box-shadow: 0px 0px 25px #2a2a2a;
+$background-tittle-width: 350px;
+$background-tittle-height: 250px;
+$section-bg-color: #eabed8;
+$section-font-family: 'Times New Roman', Times, serif;
+$info-font-family: 'Roboto', sans-serif;
+$font-size-large: 25px;
+$font-size-medium: 18px;
+$font-size-small: 16px;
+$hover-transform: 3%;
+$footer-bg-color: rgba(0, 0, 0, 0.2);
+$footer-color: white;
+
+@mixin card-style($width, $height) {
+  width: $width;
+  height: $height;
+  background-color: $card-background-color;
+  border-radius: $card-border-radius;
+  box-shadow: $card-box-shadow;
+  margin: 15px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+@mixin hover-transform($transform-value) {
+  &:hover {
+    transform: translateY($transform-value);
+  }
+}
+
+.fiesta {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+// Cards
+.background-tittle {
+  @include card-style($background-tittle-width, $background-tittle-height);
+}
+
+.fiesta-dia,
+.fiesta-direc,
+.fiesta-lugar {
+  @include card-style($card-width, $card-height);
+  margin-top: 50px;
+  @include hover-transform($hover-transform);
+}
+
+.section-fiesta {
+  position: relative;
+  border-radius: $card-border-radius;
+  font-size: $font-size-large;
+  font-family: $section-font-family;
+  color: #000000;
+  z-index: 10;
+  padding: 20px;
+  text-align: center;
+  background-color: $section-bg-color;
+  margin-top: 10px;
+}
+
+.info-fiesta {
+  position: relative;
+  top: 30px;
+  left: 20px;
+  font-family: $info-font-family;
+  font-size: $font-size-medium;
+  color: #000000;
+  z-index: 10;
+}
+
+.map {
+  width: 100%;
+  height: 200px;
+  border: 0;
+  margin-top: 10px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: $footer-bg-color;
+  color: $footer-color;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+// Media queries
+@media (max-width: 600px) {
+  .fiesta {
+    padding: 10px;
+  }
+
+  .background-tittle {
+    width: 100%;
+    height: auto;
+    margin: 10px 0;
+    padding: 15px;
+  }
+
+  .fiesta-dia,
+  .fiesta-direc,
+  .fiesta-lugar {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+  }
+
+  .section-fiesta {
+    font-size: 20px;
+    padding: 15px;
+    margin-top: 5px;
+  }
+
+  .info-fiesta {
+    font-size: $font-size-small;
+    top: 10px;
+    left: 10px;
+  }
+
+  .map {
+    height: 150px;
+    margin-top: 5px;
+  }
+}
